@@ -171,10 +171,67 @@
 // }
 // console.log(obj);
 
-let name = "Ewan";
+// let name = "Ewan";
 
-let copy = name;
+// let copy = name;
 
-copy = "Bob";
+// copy = "Bob";
 
-console.log(name, copy, name === copy);
+// console.log(name, copy, name === copy);
+
+// BIG ONE: rest and spread
+
+// const obj = {
+//   name: "Ewan",
+//   age: 32,
+//   happy: true,
+// };
+
+// const spread = { ...obj, location: "UK", age: 10 };
+
+// console.log(obj, spread);
+
+// array - spread operator
+// const arr = [1, 2, 3, 4, 5, 6, 7, 8];
+
+// const arrCopy = [...arr, ...arr, ...arr, 10, 11, 12];
+
+// console.log(arrCopy);
+
+// array - rest operator
+// const arr = [1, 2, 3, 4, 5, 6, 7, 8];
+
+// const [item1, item2, item3, ...allTheRest] = arr;
+
+// console.log(allTheRest);
+
+// BIG ONE: Passing by reference vs passing by value
+
+// let name = "Ewan";
+
+// let copy = name;
+
+// name = "Bob;";
+
+// console.log(name, copy, name === copy);
+
+// When dealing with primatives, variables are passed as values - when you make a new variable and make it equivalent, you've made a copy.
+// pass by reference for objects, pass by value for primitives
+
+// Example
+// 10 and Hi stored in memory
+let a = 10;
+let b = "Hi";
+let c = a; // '=' assigns value from one variable to the other
+c = c + 1; // if we add 1 to c, we just increment our c value by 1
+
+console.log(a, b, c);
+
+// array
+let aa = 10;
+let bb = "Hi";
+let cc = [1, 2];
+let dd = cc;
+dd.push(3); // both cc & dd get this new value of 3
+
+console.log(aa, bb, cc, dd);
