@@ -1,0 +1,48 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <button id="btn1">Click me</button>
+  </body>
+</html>
+<script>
+  //100 hacky
+  //   console.log(window.document);
+  //   const roofRef = document.getElementById("root");
+  //   roofRef.innerHTML = "Hello";
+  const btn1Ref = document.getElementById("btn1");
+
+  btn1Ref.addEventListener("click", (event) => {
+    console.log("btn1 clicked", event.target.id);
+  });
+</script> -->
+
+<!-- COUNTER -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="add">Add</button>
+    <p id="output">0</p>
+    <button id="minus">Minus</button>
+  </body>
+</html>
+<script>
+  const addRef = document.getElementById("add");
+  const minusRef = document.getElementById("minus");
+  const outputRef = document.getElementById("output");
+
+  addRef.addEventListener("click", (event) => {
+    outputRef.innerHTML = Number(outputRef.innerHTML) + 1;
+  });
+</script>
