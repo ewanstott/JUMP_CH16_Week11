@@ -1,3 +1,15 @@
+// Scope: var is function-scoped. If declared inside a function, it's accessible throughout the entire function.
+// Scope: let is block-scoped. It's only accessible within the block (statement or compound statement) where it is defined.
+// Scope: const is block-scoped. It's only accessible within the block where it is defined.
+
+// How to write a basic function in JS
+
+// function functionName(parameters) {
+//     // function body
+//     // code to be executed
+//     return someValue; // optional return statement
+//   }
+
 // Try/Catch
 // try {
 //   console.log(myName);
