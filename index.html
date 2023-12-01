@@ -1,22 +1,122 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script>
-      function test() {
-        var b = 2;
-
-        if (true) {
-          var c = 3;
-        }
-        console.log(b, c);
+    <style>
+      .done {
+        background-color: blueviolet;
       }
-    </script>
+    </style>
   </head>
-
   <body>
-    <p>hello</p>
+    <div class="container">
+      <div class="controls">
+        <label for="input">Todo</label>
+        <input type="text" id="todo" />
+        <button id="add">Add</button>
+        <button id="sortByDone">Sort by done</button>
+        <select id="sort">
+          <option value="doneASC">done - asc</option>
+          <option value="doneDESC">done - desc</option>
+        </select>
+      </div>
+
+      <p id="error"></p>
+
+      <div>
+        <ul id="todos"></ul>
+      </div>
+    </div>
   </body>
 </html>
+
+<script>
+            //state
+            const todos = [
+              { id: 1, title: "Clean car", done: false },
+              { id: 2, title: "Feed dog", done: false },
+              { id: 3, title: "Buy extra mature cheese", done: true },
+              { id: 4, title: "Buy wine", done: false },
+            ];
+
+            let todo = "";
+
+            // dom refs
+            const todosRef = document.getElementById("todos");
+            const todoRef = document.getElementById("todo");
+            const addRef = document.getElementById("add");
+            const errorRef = document.getElementById('error');
+        const sortRef  = document.getElementById('sortByDone');
+
+    sortRef.addEventListener()'change', (event) => {
+        const { value} = event.target;
+    });
+
+  switch (value) {
+      case doneAsc:
+          todos.sort((a,b) => {
+              if (a) {
+                  return 1;
+              } e;se ) return -1;
+          })
+          break;
+
+      default:
+          break;
+  }
+
+
+        const toggleDone = (id) => (
+          const index = todos.findIndex((todo) =>
+          (return todo.id === id));
+          todos[index].done = !todos[index].done;
+        );
+
+        // listen for a click on a todo
+        todosRef.addEventListener('click', (event) => {
+      toggleDone(event.target.id);
+
+      updateTodos();
+        })
+
+
+            //listens for todo input
+            todoRef.addEventListener("input", (event) => {
+              todo = event.target.value;
+            });
+
+            //listen for add click
+            addRef.addEventListener("click", () => {
+              todos.push({ id: Math.random(), title: todo, done: false });
+              updateTodos();
+            });
+
+            //validate user input
+            if (!todo.length < 3) {
+              errorRef.innerHTML = 'Input too short!';
+                return;
+            }
+
+          //   check we have no duplicates
+          const duplicate = todos.some(item) => {
+              return item.title === todo;
+          }
+          if (duplicate) {
+            errorRef.innerHTML = 'You already added this item!'
+            return;
+          }
+
+            //   updates the todos in the dom
+            const updateTodos = () => {
+              const html = todos.map((todo) => {
+                return `<li id="${todo.id}" class="${todo.done ? "done" : "undone"}">${todo.title}</li>`;
+              });
+              todosRef.innerHTML = html.join("");
+            };
+
+            updateTodos();
+
+            //Event Listener Syntax: element.addEventListner(event, function, useCapture);
+</script> -->

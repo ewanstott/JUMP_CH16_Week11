@@ -1,29 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <button id="btn1">Click me</button>
-  </body>
-</html>
-<script>
-  //100 hacky
-  //   console.log(window.document);
-  //   const roofRef = document.getElementById("root");
-  //   roofRef.innerHTML = "Hello";
-  const btn1Ref = document.getElementById("btn1");
-
-  btn1Ref.addEventListener("click", (event) => {
-    console.log("btn1 clicked", event.target.id);
-  });
-</script> -->
-
-<!-- COUNTER -->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -43,6 +17,19 @@
   const outputRef = document.getElementById("output");
 
   addRef.addEventListener("click", (event) => {
+    if (outputRef.innerHTML == 10) {
+      alert("You are greedy");
+      return;
+    }
+
     outputRef.innerHTML = Number(outputRef.innerHTML) + 1;
+  });
+  minusRef.addEventListener("click", (event) => {
+    if (outputRef.innerHTML == 0) {
+      // if number is 0 (true), return (then nothing else happens)
+      return;
+    }
+
+    outputRef.innerHTML = Number(outputRef.innerHTML) - 1;
   });
 </script>

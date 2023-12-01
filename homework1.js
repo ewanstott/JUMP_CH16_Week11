@@ -152,34 +152,31 @@
 // Define a 4th variable inside the 3rd function. This variable should be accessible by every function (think bad!)
 // Create a scope inside the 3rd function, place a variable inside it that is only accessible inside that scope.
 
+//  when you create a scope, all you are doing is placing a section of code inside a set of curly brackets so any variables declared inside are not accessible outside of that scope.
+
 function parentScope() {
   // The first variable is accessible inside every function.
   const variable1 = "Variable accessible in all functions";
   console.log("variable1:", variable1);
-
   // The second variable is accessible inside the second and third function only.
   function function2() {
     const variable2 = "Variable accessible in function 2 and 3 only";
     console.log("variable2:", variable2);
-
     // The third variable is accessible inside the third function only.
     function function3() {
       const variable3 = "Variable accessible in function 3 only";
       console.log("variable3:", variable3);
-
       // Define a 4th variable inside the 3rd function. This variable should be accessible by every function (think bad!)
-      var variable4 = "Variable accessible in every function (bad function!)";
-      console.log("variable4:", variable4);
-
+      variable4 = "Variable accessible in every function (bad function!)";
       // Create a scope inside the 3rd function, place a variable inside it that is only accessible inside that scope.
-      function scopedFunction() {
-        const scopedVariable = "Scoped variable accessible in function 3 only";
+      {
+        const scopedVariable = "Scoped variable accessible only in this scope";
         console.log("Scoped Variable:", scopedVariable);
       }
-      scopedFunction();
     }
     function3();
   }
   function2();
 }
 parentScope();
+console.log(variable4);
